@@ -1,0 +1,27 @@
+def run_truth_table_generator():
+    """
+    Loops through all 4 structural binary truth assignments
+    and displays the completed evaluations.
+    """
+    print(f"{'p':<6} | {'q':<6} | {'¬p':<6} | {'p ∧ q':<6} | {'p → q':<12} | {'q → p (Conv)':<13}")
+    print("-" * 60)
+
+    # Truth matrix combinations
+    combinations = [(True, True), (True, False), (False, True), (False, False)]
+
+    for p, q in combinations:
+        try:
+            not_p = negation(p)
+            and_op = conjunction(p, q)
+            imp_op = conditional(p, q)
+            conv_op = conditional(q, p)
+
+            print(f"{str(p):<6} | {str(q):<6} | {str(not_p):<6} | {str(and_op):<6} | {str(imp_op):<12} | {str(conv_op):<13}")
+
+        except Exception:
+            print(f"{str(p):<6} | {str(q):<6} | [Functions Not Implemented Yet]")
+
+
+if __name__ == "__main__":
+    print("IST 230 Lab - Chapter 1 Evaluation Matrix")
+    run_truth_table_generator()
