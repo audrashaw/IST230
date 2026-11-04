@@ -1,0 +1,27 @@
+def negation(p: bool) -> bool:
+    """
+    Returns the logical negation of p (¬p).
+    """
+    return not p
+
+
+def conjunction(p: bool, q: bool) -> bool:
+    """
+    Returns the logical conjunction of p and q (p ∧ q).
+    """
+    return p and q
+
+
+def disjunction(p: bool, q: bool) -> bool:
+    """
+    Returns the logical disjunction of p and q (p ∨ q).
+    """
+    return p or q
+
+
+def exclusive_or(p: bool, q: bool) -> bool:
+    """
+    Returns the exclusive OR of p and q (p ⊕ q).
+    Evaluates to True if exactly one of the inputs is True.
+    """
+    return p != q
